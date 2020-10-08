@@ -7,8 +7,8 @@ Project name:
   CSAcalculator
 
 People and their roles:
-  Matej Kliment - 
-  Žofia Juricová - 
+  Matej Kliment - the main commiter
+  Žofia Juricová - fork maker
 
 Presentation date:
   9. October 2020 (friday)
@@ -20,4 +20,4 @@ Link to the source code on Github:
   github.com/Jarwise/CSAcalculator
   
 Description of the project:
-  
+  This calculator provides a variety of miscellaneous functions such as Pascal's triangle, temperature converter or a quadratic equation solver. It is rather unique because of this mix of functions that are not necessarily on every calculator.
