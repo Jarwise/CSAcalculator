@@ -57,10 +57,12 @@ public class Calculator {
             else {if(c>'9' && c<'0'){System.out.println("Probably some error, anyway I have this: "+x);}}
         }
         switch(b){
-            case '+': v = y + x; break;
+            case '+': v = y + x; break;  // for now only for 5 operator - can be expanded
             case '-': v = y - x; break;
             case '*': v = y * x; break;
-            case '/': v = y / x; break;
+            case '/':
+                try {v = y / x;} catch (ArithmeticException e) {System.out.println("An exception for division by zero occured " + e);} break;
+                // catching an exception for division by zero
             case '%': v = y % x; break;
             case '^': for(int i=0; i<x; i++){ v *= y;} break;
         }
@@ -68,7 +70,7 @@ public class Calculator {
         JOptionPane.showMessageDialog(null, y+""+b+""+x+" = "+v, "Calculator.exe", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public static void pascal(int layers){  // pascal's trinagle with an option for a number of layers
+    public static void pascal(int layers){  // pascal's trinagle with an option for choosing a number of layers
         ArrayList<Integer> list = new ArrayList<>();
         String out = "";
         list.add(1);
@@ -85,7 +87,7 @@ public class Calculator {
         JOptionPane.showMessageDialog(null, out, "Pascal.exe", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public static void temperature() {  // convertion between Celcius and Farengheit
+    public static void temperature() {  // convertion between Celcius and Fahrengheit
         double fahrenheit, celsius;
         String tempInput, conversionOptions, output = " ";
         conversionOptions = JOptionPane.showInputDialog(null, "Type in 'C' for Celsius to Fahrenheit. Type in 'F' for Fahrenheit to Celsius.");
