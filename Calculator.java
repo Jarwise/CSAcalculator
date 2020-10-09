@@ -3,47 +3,47 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 public class Calculator {
     public static void main(String[] args){
+        while(true){
+            JTextField field1 = new JTextField();
+            JTextField field2 = new JTextField();
+            JTextField field3 = new JTextField();
+            Object[] Fields = { // object to be used for a GUI with three fields
+                "a: ", field1,
+                "b: ", field2,
+                "c: ", field3
+            };
 
-        JTextField field1 = new JTextField();
-        JTextField field2 = new JTextField();
-        JTextField field3 = new JTextField();
-        Object[] Fields = { // object to be used for a GUI with three fields
-            "a: ", field1,
-            "b: ", field2,
-            "c: ", field3
-        };
+            Object[] options = {"Calculator", "Pascal triangle", "Temperature converter", "Quardatic equation", "Prime number factorization"}; // add another options here
+            String input;
+            int n = JOptionPane.showOptionDialog(null, "What would you like to calculate?", 
+            "JarWise", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, null);
 
-        Object[] options = {"Calculator", "Pascal triangle", "Temperature converter", "Quardatic equation", "Prime number factorization"}; // add another options here
-        String input;
-        int n = JOptionPane.showOptionDialog(null, "What would you like to calculate?", 
-        "JarWise", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, null);
-
-            // switch for each option of button
-        switch (n) { 
-            case 0: 
-                input = JOptionPane.showInputDialog(null, "Equation: ", "Calculator.exe", JOptionPane.QUESTION_MESSAGE);
-                calculate(input);
-                break;
-            case 1:
-                int x = Integer.parseInt(JOptionPane.showInputDialog(null, "Number of layers ", "Pascal.exe", JOptionPane.QUESTION_MESSAGE));
-                pascal(x);
-                break;
-            case 2: 
-                //JOptionPane.showMessageDialog(null, "A Cookie", "CookieGiver.exe", JOptionPane.INFORMATION_MESSAGE);
-                temperature();
-                break;
-            case 3: 
-                JOptionPane.showConfirmDialog(null, Fields, "QuadraticEquationCalculator.exe", JOptionPane.DEFAULT_OPTION);
-                quadratic(Integer.parseInt(field1.getText()), Integer.parseInt(field2.getText()), Integer.parseInt(field3.getText()));
-                break;
-            case 4:
-                int y = Integer.parseInt(JOptionPane.showInputDialog(null, "Insert a number", "PrimeNumberFactorization.exe", JOptionPane.INFORMATION_MESSAGE));
-                factor(y);
-                break;
-            default: break;
+                // switch for each option of button
+            switch (n) { 
+                case 0: 
+                    input = JOptionPane.showInputDialog(null, "Equation: ", "Calculator.exe", JOptionPane.QUESTION_MESSAGE);
+                    calculate(input);
+                    break;
+                case 1:
+                    int x = Integer.parseInt(JOptionPane.showInputDialog(null, "Number of layers ", "Pascal.exe", JOptionPane.QUESTION_MESSAGE));
+                    pascal(x);
+                    break;
+                case 2: 
+                    //JOptionPane.showMessageDialog(null, "A Cookie", "CookieGiver.exe", JOptionPane.INFORMATION_MESSAGE);
+                    temperature();
+                    break;
+                case 3: 
+                    JOptionPane.showConfirmDialog(null, Fields, "QuadraticEquationCalculator.exe", JOptionPane.DEFAULT_OPTION);
+                    quadratic(Integer.parseInt(field1.getText()), Integer.parseInt(field2.getText()), Integer.parseInt(field3.getText()));
+                    break;
+                case 4:
+                    int y = Integer.parseInt(JOptionPane.showInputDialog(null, "Insert a number", "PrimeNumberFactorization.exe", JOptionPane.INFORMATION_MESSAGE));
+                    factor(y);
+                    break;
+                default: break;
+            }
         }
     }
-
     public static void calculate(String text){  // regular calculator for two integer numbers
         long x = 0, y = 0, v=1;
         char b = '+';
@@ -110,8 +110,8 @@ public class Calculator {
     public static void quadratic(double a, double b, double c){  // quadratic function calculator in a form of ax^2+bx+c=0
         double result1 = ((-b) + Math.sqrt(b*b - 4*a*c)) / (2*a);
         double result2 = ((-b) - Math.sqrt(b*b - 4*a*c)) / (2*a);
-        String response = " For "+a+"x^2 + "+b+"x + "+c+" = 0\n Is x equal to ";
-        JOptionPane.showMessageDialog(null, response + result1+" or "+result2, "QuadraticEquationCalculatorBecauseWhyNot?ItsUsefulIsntIt?.exe", JOptionPane.PLAIN_MESSAGE);
+        String response = " For "+a+"x^2 + "+b+"x + "+c+" = 0\n The roots for x are ";
+        JOptionPane.showMessageDialog(null, response + result1+" and "+result2, "QuadraticEquationCalculatorBecauseWhyNot?ItsUsefulIsntIt?.exe", JOptionPane.PLAIN_MESSAGE);
     }
 
     public static void factor(int x){   // Prime number factorization of an integer
