@@ -3,17 +3,17 @@
 GRASPS Task Unit2 Algorithm implementation: ESC (Extreme School Calculator) - 
 Calculator that provides variety of unusual functions potentially necessary for students, healthy life style etc.
 
-Project name: 
-CSAcalculator
+Project name:   
+CSAcalculator  
 
-People and their roles:
-Matej Kliment - the main commiter
-Žofia Juricová - fork maker
+People and their roles:  
+Matej Kliment - the main commiter  
+Žofia Juricová - fork maker  
 
-Presentation date:
-9. October 2020 (friday)
+Presentation date:  
+9. October 2020 (friday)  
 
-Link to a document describing the project in details:
+Link to a document describing the project in details:  
 This README.md file
 
 Link to the source code on Github:
