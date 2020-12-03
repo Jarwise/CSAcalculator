@@ -40,6 +40,7 @@ public class Calculator {
                     int y = Integer.parseInt(JOptionPane.showInputDialog(null, "Insert a number", "PrimeNumberFactorization.exe", JOptionPane.INFORMATION_MESSAGE));
                     factor(y);
                     break;
+
                 default: break;
             }
         }
